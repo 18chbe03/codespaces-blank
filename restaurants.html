@@ -8,7 +8,6 @@
 </head>
 <body>
 
-  <!-- 💖 Floating hearts layer -->
   <div class="hearts"></div>
 
   <main class="card">
@@ -21,30 +20,11 @@
       <input type="hidden" name="_subject" value="💘 Valentine: Restaurangval" />
 
       <fieldset class="choices">
-        <label class="choice">
-          <input type="radio" name="restaurant" value="Noun" required />
-          <span>Noun</span>
-        </label>
-
-        <label class="choice">
-          <input type="radio" name="restaurant" value="Butchers steakhouse" />
-          <span>Butchers steakhouse</span>
-        </label>
-
-        <label class="choice">
-          <input type="radio" name="restaurant" value="Elrandsson" />
-          <span>Elrandsson</span>
-        </label>
-
-        <label class="choice">
-          <input type="radio" name="restaurant" value="Syd bar" />
-          <span>Syd bar</span>
-        </label>
-
-        <label class="choice">
-          <input type="radio" name="restaurant" value="Noppas" />
-          <span>Noppas</span>
-        </label>
+        <label class="choice"><input type="radio" name="restaurant" value="Noun" required /> <span>Noun</span></label>
+        <label class="choice"><input type="radio" name="restaurant" value="Butchers steakhouse" /> <span>Butchers steakhouse</span></label>
+        <label class="choice"><input type="radio" name="restaurant" value="Elrandsson" /> <span>Elrandsson</span></label>
+        <label class="choice"><input type="radio" name="restaurant" value="Syd bar" /> <span>Syd bar</span></label>
+        <label class="choice"><input type="radio" name="restaurant" value="Noppas" /> <span>Noppas</span></label>
 
         <label class="choice">
           <input type="radio" name="restaurant" value="Övrigt" id="otherRadio" />
@@ -62,32 +42,19 @@
         <textarea name="message" rows="3" placeholder="Något gulligt..."></textarea>
       </label>
 
-      <!-- Valfritt email, men INTE kopplat till Formspree-template -->
-      <label class="label">
-        Din email (valfritt):
-        <input type="email" name="email" placeholder="felicia@..." />
-      </label>
-
       <button class="btn primary" type="submit">Skicka 💌</button>
 
-      <!-- BYT till din riktiga GitHub Pages URL -->
-      <input
-        type="hidden"
-        name="_next"
-        value="https://18chbe03.github.io/valentine/thanks.html"
-      />
+      <input type="hidden" name="_next" value="https://18chbe03.github.io/valentine/thanks.html" />
     </form>
 
     <p class="tiny">När du skickar kommer svaret mailas till Christian.</p>
   </main>
 
   <script>
-    // Om "Övrigt" väljs: fokusera textboxen
     const otherRadio = document.getElementById('otherRadio');
     const otherText = document.getElementById('otherText');
     otherRadio.addEventListener('change', () => otherText.focus());
 
-    // 💖 Floating hearts
     const heartsContainer = document.querySelector('.hearts');
     function createHeart() {
       const heart = document.createElement('div');
