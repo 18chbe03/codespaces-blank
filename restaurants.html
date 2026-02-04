@@ -7,15 +7,25 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+
+  <!-- 💖 Floating hearts layer -->
+  <div class="hearts"></div>
+
   <main class="card">
     <h1>Yay! 💘</h1>
     <p>Välj vilken restaurang du vill gå till i Gävle:</p>
 
-    <!-- VIKTIGT: Byt ACTION-URLen till din Formspree endpoint (se steg 2) -->
     <form class="form" action="https://formspree.io/f/xdadqjkz" method="POST">
-      <!-- dolda fält som hjälper i mailet -->
+      <!-- Dolda fält som hjälper i mailet -->
       <input type="hidden" name="question" value="Do you want to be my valentine Felicia?" />
       <input type="hidden" name="from_page" value="restaurants.html" />
+
+      <!-- Snygg subject i mailet -->
+      <input type="hidden" name="_subject" value="💘 Valentine: Restaurangval" />
+
+      <!-- Om hon fyller i email får hon kopia + Reply-To sätts -->
+      <input type="hidden" name="_replyto" value="{{email}}" />
+      <input type="hidden" name="_cc" value="{{email}}" />
 
       <fieldset class="choices">
         <label class="choice">
@@ -59,22 +69,19 @@
         <textarea name="message" rows="3" placeholder="Något gulligt..."></textarea>
       </label>
 
-      <!-- Formspree använder _replyto för “reply-to”. Valfritt att ha med. -->
       <label class="label">
-        Din email (valfritt):
-        <input type="email" name="_replyto" placeholder="felicia@..." />
+        Din email (valfritt, för att få en kopia):
+        <input type="email" name="email" placeholder="felicia@..." />
       </label>
 
       <button class="btn primary" type="submit">Skicka 💌</button>
 
-      <!-- Extra: enkel “tack”-redirect om du vill -->
-      <!-- <input type="hidden" name="_next" value="https://DIN_GITHUB_PAGES_URL/thanks.html"> -->
+      <!-- Redirect efter submit (BYT till din riktiga GitHub Pages URL) -->
       <input
         type="hidden"
         name="_next"
         value="https://DITTANAMN.github.io/DITT-REPO/thanks.html"
       />
-
     </form>
 
     <p class="tiny">När du skickar kommer svaret mailas till Christian.</p>
@@ -85,6 +92,24 @@
     const otherRadio = document.getElementById('otherRadio');
     const otherText = document.getElementById('otherText');
     otherRadio.addEventListener('change', () => otherText.focus());
+
+    // 💖 Floating hearts
+    const heartsContainer = document.querySelector('.hearts');
+
+    function createHeart() {
+      const heart = document.createElement('div');
+      heart.className = 'heart-float';
+      heart.textContent = ['💖','💕','❤️','💘'][Math.floor(Math.random() * 4)];
+
+      heart.style.left = Math.random() * 100 + 'vw';
+      heart.style.animationDuration = (3 + Math.random() * 4) + 's';
+
+      heartsContainer.appendChild(heart);
+      setTimeout(() => heart.remove(), 7000);
+    }
+
+    // 💥 HEART INTENSITY (lower = more hearts)
+    setInterval(createHeart, 300);
   </script>
 </body>
 </html>

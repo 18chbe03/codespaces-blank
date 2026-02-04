@@ -63,3 +63,56 @@ input[type="text"], input[type="email"], textarea {
   margin-top: 10px;
 }
 
+/* 💖 Floating hearts */
+.hearts {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.heart-float {
+  position: absolute;
+  bottom: -20px;
+  font-size: 20px;
+  animation: floatUp linear forwards;
+  opacity: 0.85;
+}
+
+@keyframes floatUp {
+  from {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+  to {
+    transform: translateY(-120vh) scale(1.7);
+    opacity: 0;
+  }
+}
+
+/* Keep content above hearts */
+.card {
+  position: relative;
+  z-index: 2;
+}
+
+/* Poodle styling */
+.poodle-wrap {
+  display: flex;
+  justify-content: center;
+  margin: 18px 0;
+}
+
+.poodle {
+  width: 220px;
+  max-width: 75%;
+  border-radius: 20px;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.18);
+}
+
+.love {
+  font-size: 16px;
+}
+
+
