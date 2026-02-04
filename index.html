@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Valentine 💘</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="card">
+    <div class="heart" aria-hidden="true">❤</div>
+    <h1>Do you want to be my valentine Felicia?</h1>
+
+    <div class="buttons">
+      <a class="btn primary" href="restaurants.html">Yes 💖</a>
+      <button class="btn ghost" id="noBtn" type="button">No 🙈</button>
+    </div>
+
+    <p class="tiny">Psst… “No” är lite svår att trycka 😏</p>
+  </main>
+
+  <script>
+    // Lekfullt: gör "No" svår att klicka på
+    const noBtn = document.getElementById('noBtn');
+    noBtn.addEventListener('mouseover', () => {
+      const dx = Math.floor(Math.random() * 140) - 70;
+      const dy = Math.floor(Math.random() * 140) - 70;
+      noBtn.style.transform = `translate(${dx}px, ${dy}px)`;
+    });
+    noBtn.addEventListener('click', () => {
+      alert("Okej okej 😄 Prova 'Yes' istället!");
+    });
+  </script>
+</body>
+</html>

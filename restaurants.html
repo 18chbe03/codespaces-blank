@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="sv">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Välj restaurang 🍽️</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="card">
+    <h1>Yay! 💘</h1>
+    <p>Välj vilken restaurang du vill gå till i Gävle:</p>
+
+    <!-- VIKTIGT: Byt ACTION-URLen till din Formspree endpoint (se steg 2) -->
+    <form class="form" action="https://formspree.io/f/xdadqjkz" method="POST">
+      <!-- dolda fält som hjälper i mailet -->
+      <input type="hidden" name="question" value="Do you want to be my valentine Felicia?" />
+      <input type="hidden" name="from_page" value="restaurants.html" />
+
+      <fieldset class="choices">
+        <label class="choice">
+          <input type="radio" name="restaurant" value="Noun" required />
+          <span>Noun</span>
+        </label>
+
+        <label class="choice">
+          <input type="radio" name="restaurant" value="Butchers steakhouse" />
+          <span>Butchers steakhouse</span>
+        </label>
+
+        <label class="choice">
+          <input type="radio" name="restaurant" value="Elrandsson" />
+          <span>Elrandsson</span>
+        </label>
+
+        <label class="choice">
+          <input type="radio" name="restaurant" value="Syd bar" />
+          <span>Syd bar</span>
+        </label>
+
+        <label class="choice">
+          <input type="radio" name="restaurant" value="Noppas" />
+          <span>Noppas</span>
+        </label>
+
+        <label class="choice">
+          <input type="radio" name="restaurant" value="Övrigt" id="otherRadio" />
+          <span>Övrigt</span>
+        </label>
+
+        <div class="other">
+          <label for="otherText">Om övrigt – skriv vad du vill:</label>
+          <input id="otherText" name="other_details" type="text" placeholder="T.ex. 'Restaurang X'" />
+        </div>
+      </fieldset>
+
+      <label class="label">
+        Valfritt meddelande:
+        <textarea name="message" rows="3" placeholder="Något gulligt..."></textarea>
+      </label>
+
+      <!-- Formspree använder _replyto för “reply-to”. Valfritt att ha med. -->
+      <label class="label">
+        Din email (valfritt):
+        <input type="email" name="_replyto" placeholder="felicia@..." />
+      </label>
+
+      <button class="btn primary" type="submit">Skicka 💌</button>
+
+      <!-- Extra: enkel “tack”-redirect om du vill -->
+      <!-- <input type="hidden" name="_next" value="https://DIN_GITHUB_PAGES_URL/thanks.html"> -->
+      <input
+        type="hidden"
+        name="_next"
+        value="https://DITTANAMN.github.io/DITT-REPO/thanks.html"
+      />
+
+    </form>
+
+    <p class="tiny">När du skickar kommer svaret mailas till Christian.</p>
+  </main>
+
+  <script>
+    // Om "Övrigt" väljs: fokusera textboxen
+    const otherRadio = document.getElementById('otherRadio');
+    const otherText = document.getElementById('otherText');
+    otherRadio.addEventListener('change', () => otherText.focus());
+  </script>
+</body>
+</html>

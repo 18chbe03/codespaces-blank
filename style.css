@@ -1,0 +1,65 @@
+:root { font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif; }
+body {
+  margin: 0; min-height: 100vh; display: grid; place-items: center;
+  background: radial-gradient(circle at top, #ffe3ee, #fff);
+  color: #1b1b1b;
+}
+.card {
+  width: min(520px, 92vw);
+  background: rgba(255,255,255,0.9);
+  border: 1px solid rgba(0,0,0,0.06);
+  border-radius: 20px;
+  padding: 28px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  text-align: center;
+}
+.heart { font-size: 44px; margin-bottom: 8px; }
+h1 { font-size: 26px; margin: 10px 0 8px; }
+p { margin: 8px 0 16px; }
+.buttons { display:flex; gap:12px; justify-content:center; flex-wrap:wrap; margin-top: 14px; }
+.btn {
+  border: 0; border-radius: 999px; padding: 12px 18px;
+  font-weight: 600; cursor: pointer; text-decoration: none;
+  display: inline-flex; align-items:center; justify-content:center;
+}
+.primary { background: #ff3b7a; color: white; }
+.ghost { background: transparent; border: 1px solid rgba(0,0,0,0.15); color: #222; }
+.tiny { font-size: 12px; opacity: 0.7; margin-top: 14px; }
+
+.form { text-align: left; margin-top: 14px; }
+.choices { border: 0; padding: 0; margin: 0 0 14px; display: grid; gap: 10px; }
+.choice {
+  display: flex; gap: 10px; align-items: center;
+  padding: 10px 12px; border: 1px solid rgba(0,0,0,0.08);
+  border-radius: 14px; background: white;
+}
+.choice input { transform: scale(1.15); }
+.other { padding: 8px 2px 0; }
+.label { display:block; margin: 10px 0 14px; }
+input[type="text"], input[type="email"], textarea {
+  width: 100%; box-sizing: border-box;
+  border: 1px solid rgba(0,0,0,0.12);
+  border-radius: 12px;
+  padding: 10px 12px;
+  font: inherit;
+  background: white;
+}
+
+.poodle-wrap {
+  margin: 18px 0;
+  display: flex;
+  justify-content: center;
+}
+
+.poodle {
+  width: 220px;
+  max-width: 70%;
+  border-radius: 18px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+.love {
+  font-size: 16px;
+  margin-top: 10px;
+}
+
