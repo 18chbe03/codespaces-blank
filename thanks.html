@@ -7,8 +7,6 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-
-  <!-- 💖 Floating hearts layer -->
   <div class="hearts"></div>
 
   <main class="card">
@@ -16,7 +14,6 @@
     <p>Jag blev jätteglad av ditt svar.</p>
 
     <div class="poodle-wrap">
-      <!-- ✅ STABLE black poodle image -->
       <img
         src="https://upload.wikimedia.org/wikipedia/commons/5/5f/Black_Poodle.jpg"
         alt="Söt svart pudel"
@@ -26,31 +23,24 @@
 
     <p class="love">
       En liten svart pudel som säger<br />
-      <strong>“lämna mig inte hemma för länge ensam bara 🐾”</strong>
+      <strong>“Jag längtar redan 🐾”</strong>
     </p>
 
-    <p class="tiny">Ses snart ❤️</p>
+    <p class="tiny">Ses snart… ❤️</p>
   </main>
 
-  <!-- 💖 Heart rain script -->
   <script>
     const heartsContainer = document.querySelector('.hearts');
-
     function createHeart() {
       const heart = document.createElement('div');
       heart.className = 'heart-float';
       heart.textContent = ['💖','💕','❤️','💘'][Math.floor(Math.random() * 4)];
-
       heart.style.left = Math.random() * 100 + 'vw';
       heart.style.animationDuration = (3 + Math.random() * 4) + 's';
-
       heartsContainer.appendChild(heart);
       setTimeout(() => heart.remove(), 7000);
     }
-
-    // 💥 HEART INTENSITY
     setInterval(createHeart, 250);
   </script>
-
 </body>
 </html>

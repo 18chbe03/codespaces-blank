@@ -16,16 +16,9 @@
     <p>Välj vilken restaurang du vill gå till i Gävle:</p>
 
     <form class="form" action="https://formspree.io/f/xdadqjkz" method="POST">
-      <!-- Dolda fält som hjälper i mailet -->
       <input type="hidden" name="question" value="Do you want to be my valentine Felicia?" />
       <input type="hidden" name="from_page" value="restaurants.html" />
-
-      <!-- Snygg subject i mailet -->
       <input type="hidden" name="_subject" value="💘 Valentine: Restaurangval" />
-
-      <!-- Om hon fyller i email får hon kopia + Reply-To sätts -->
-      <input type="hidden" name="_replyto" value="{{email}}" />
-      <input type="hidden" name="_cc" value="{{email}}" />
 
       <fieldset class="choices">
         <label class="choice">
@@ -69,18 +62,19 @@
         <textarea name="message" rows="3" placeholder="Något gulligt..."></textarea>
       </label>
 
+      <!-- Valfritt email, men INTE kopplat till Formspree-template -->
       <label class="label">
-        Din email (valfritt, för att få en kopia):
+        Din email (valfritt):
         <input type="email" name="email" placeholder="felicia@..." />
       </label>
 
       <button class="btn primary" type="submit">Skicka 💌</button>
 
-      <!-- Redirect efter submit (BYT till din riktiga GitHub Pages URL) -->
+      <!-- BYT till din riktiga GitHub Pages URL -->
       <input
         type="hidden"
         name="_next"
-        value="https://DITTANAMN.github.io/DITT-REPO/thanks.html"
+        value="https://18chbe03.github.io/valentine/thanks.html"
       />
     </form>
 
@@ -95,20 +89,15 @@
 
     // 💖 Floating hearts
     const heartsContainer = document.querySelector('.hearts');
-
     function createHeart() {
       const heart = document.createElement('div');
       heart.className = 'heart-float';
       heart.textContent = ['💖','💕','❤️','💘'][Math.floor(Math.random() * 4)];
-
       heart.style.left = Math.random() * 100 + 'vw';
       heart.style.animationDuration = (3 + Math.random() * 4) + 's';
-
       heartsContainer.appendChild(heart);
       setTimeout(() => heart.remove(), 7000);
     }
-
-    // 💥 HEART INTENSITY (lower = more hearts)
     setInterval(createHeart, 300);
   </script>
 </body>
